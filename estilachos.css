@@ -218,7 +218,7 @@ body {
 
 .ventanilla {
   background-color: #99212B;
-  background-image: url(../Imagenes/charcuteria1.svg);
+  background-image: url(./Imagenes/charcuteria1.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

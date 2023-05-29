@@ -1,11 +1,11 @@
 [
-    { "nombre": "Bondiola Curada", "precio": 3100, "stock": 5000, "categoria": "curados" , "imagen": "../Imagenes/bondiola.png"},
-    { "nombre": "Jamón Serrano", "precio": 4200, "stock": 2000, "categoria": "curados" , "imagen": "../Imagenes/jamonserrano.png"},
-    { "nombre": "Salame", "precio": 1990, "stock": 8500, "categoria": "embutido", "imagen": "../Imagenes/salame.png"},
-    { "nombre": "Charqui", "precio": 1500, "stock": 5500, "categoria": "deshidratados" , "imagen": "../Imagenes/charqui.png" },
-    { "nombre": "Chorizo", "precio": 4800, "stock": 6500, "categoria": "embutido" , "imagen": "../Imagenes/Chorizo.png" },
-    { "nombre": "Jamon Cocido", "precio": 2500, "stock": 6500, "categoria": "embutido" , "imagen": "../Imagenes/jamon.png" },
-    { "nombre": "Salchicha", "precio": 3500, "stock": 6500, "categoria": "embutido" , "imagen": "../Imagenes/salchichas1.png" },
-    { "nombre": "Mortadela", "precio": 1900, "stock": 6500, "categoria": "embutido" , "imagen": "../Imagenes/mortadela1.png" }
+    { "nombre": "Bondiola Curada", "precio": 3100, "stock": 5000, "categoria": "curados" , "imagen": "./Imagenes/bondiola.png"},
+    { "nombre": "Jamón Serrano", "precio": 4200, "stock": 2000, "categoria": "curados" , "imagen": "./Imagenes/jamonserrano.png"},
+    { "nombre": "Salame", "precio": 1990, "stock": 8500, "categoria": "embutido", "imagen": "./Imagenes/salame.png"},
+    { "nombre": "Charqui", "precio": 1500, "stock": 5500, "categoria": "deshidratados" , "imagen": "./Imagenes/charqui.png" },
+    { "nombre": "Chorizo", "precio": 4800, "stock": 6500, "categoria": "embutido" , "imagen": "./Imagenes/Chorizo.png" },
+    { "nombre": "Jamon Cocido", "precio": 2500, "stock": 6500, "categoria": "embutido" , "imagen": "./Imagenes/jamon.png" },
+    { "nombre": "Salchicha", "precio": 3500, "stock": 6500, "categoria": "embutido" , "imagen": "./Imagenes/salchichas1.png" },
+    { "nombre": "Mortadela", "precio": 1900, "stock": 6500, "categoria": "embutido" , "imagen": "./Imagenes/mortadela1.png" }
   ]
   
