@@ -3,13 +3,29 @@
 let productos = [];
 
 fetch("./productos.json")
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Error al cargar el archivo JSON");
+    }
+    return response.json();
+  })
   .then(data => {
     productos = data;
     cargarProductos(productos);
     actualizarPrecioTotal(); 
     restaurarCarrito(); 
+  })
+  .catch(error => {
+    console.error(error);
+    Swal.fire({
+      title: 'NO TENEMOS PRODUCTOS',
+      text: 'Lamentamos las molestias, en este momento no contamos con productos disponibles',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    });
   });
+
+
 
 
 
@@ -33,7 +49,7 @@ function cargarProductos() {
       <h2 class="nombreproducto">${producto.nombre}</h2>
       <h3 class="precioproducto">$${producto.precio}</h3>
       <div class="cantidad">
-        <input id="cantidad-${producto.nombre}" class="cantidad__input" type="number" value="100" min="100" max="${producto.stock}" step="100">
+        <input id="cantidad-${producto.nombre}" class="cantidad__input" type="number" value="100" min="${producto.minimo}" max="${producto.stock}" step="${producto.minimo}">
         <h4>gramos<h4>
       </div>
       <button class="botoncompra">AGREGAR AL CARRO</button>
@@ -146,15 +162,21 @@ function reiniciarCantidadProductos() {
 
 
 
-// funcion alert al comprar
-function mostrarMensajeAlerta() {
-  const precioTotal = precioTotalElement.textContent.replace("$", "");
-  const mensaje = `TOTAL A PAGAR: $${precioTotal}\nEsperamos que nuestra atención haya sido de su agrado, su producto será enviado.\nGracias por comprar en DRACARNIS.\nSíguenos en Instagram @Dracarnis`;
-  alert(mensaje);
-  reiniciarCantidadProductos()
-}
-
-botonCarrito.addEventListener("click", mostrarMensajeAlerta);
+// funcion alert final al comprar
+const botonComprar = document.querySelector("#botoncarrito");
+botonComprar.addEventListener("click", () => {
+  const precioTotal = parseFloat(precioTotalElement.textContent.replace("$", ""));
+  Swal.fire({
+    title: 'TOTAL A PAGAR: $' + precioTotal,
+    text: 'Esperamos que nuestra atención haya sido de su agrado. Su producto será enviado.\nGracias por comprar en DRACARNIS.\nSíguenos en Instagram @Dracarnis',
+    icon: 'success',
+    confirmButtonText: 'Aceptar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      reiniciarCantidadProductos(); // Reinicia las cantidades de productos a cero
+    }
+  });
+});
 
 
 
